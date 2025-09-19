@@ -16,5 +16,16 @@ namespace pryDiazActividades
         {
             InitializeComponent();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregar frmAgregar = new frmAgregar();
+            frmAgregar.ShowDialog();
+        }
     }
 }
