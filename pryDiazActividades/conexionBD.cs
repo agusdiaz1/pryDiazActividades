@@ -30,7 +30,7 @@ namespace pryDiazActividades
 
                 comando.Connection = conexion;
                 comando.CommandType = CommandType.Text;
-                comando.CommandText = "SELECT * FROM Usuarios";
+                comando.CommandText = "SELECT * FROM Actividades";
 
                 DataTable tablaActividades = new DataTable();
 

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,14 +34,35 @@ namespace pryDiazActividades
         {
             try
             {
-                if (dgvActividades.Rows.Count > 0)
+                if (dgvActividades.Rows.Count > 0 && dgvActividades.CurrentRow != null)
                 {
-                    dgvActividades.Rows.RemoveAt(dgvActividades.SelectedRows[0].Index);
+                    string id = dgvActividades.CurrentRow.Cells[0].Value.ToString();
+
+                    int Id;
+                    if (int.TryParse(id, out Id))
+                    {
+                        conexion.EliminarActividad(Id);
+                        conexion.listarActividades(dgvActividades);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El ID seleccionado no es válido.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una actividad primero.");
                 }
             }
-            catch 
+            catch (Exception ex)
             {
+                MessageBox.Show("Error al eliminar actividad: " + ex.Message);
             }
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            conexion.listarActividades(dgvActividades);
         }
     }
 }
