@@ -16,6 +16,7 @@ namespace pryDiazActividades
         public frmAgregar()
         {
             InitializeComponent();
+            conexion.listarActividades(dgvActividades);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
