@@ -36,6 +36,8 @@
             this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.dgvActividades = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombreActividad
@@ -111,12 +113,21 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // dgvActividades
+            // 
+            this.dgvActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActividades.Location = new System.Drawing.Point(370, 22);
+            this.dgvActividades.Name = "dgvActividades";
+            this.dgvActividades.Size = new System.Drawing.Size(269, 380);
+            this.dgvActividades.TabIndex = 8;
+            // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(359, 426);
+            this.ClientSize = new System.Drawing.Size(669, 426);
+            this.Controls.Add(this.dgvActividades);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dtpVencimiento);
@@ -127,6 +138,7 @@
             this.Controls.Add(this.lblNombreActividad);
             this.Name = "frmAgregar";
             this.Text = "frmAgregar";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +154,6 @@
         private System.Windows.Forms.DateTimePicker dtpVencimiento;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.DataGridView dgvActividades;
     }
 }

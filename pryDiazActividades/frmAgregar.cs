@@ -31,6 +31,7 @@ namespace pryDiazActividades
                 if(txtActividad.Text != "")
                 {
                     conexion.AgregarActividades(nuevaActividad);
+                    conexion.listarActividades(dgvActividades);
                     MessageBox.Show("¡Actividad agregada correctamente!");
                     LimpiarCampos();
                     //conexion.listarActividades(dgvActividades);
