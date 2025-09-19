@@ -12,6 +12,7 @@ namespace pryDiazActividades
 {
     public partial class frmPrincipal : Form
     {
+        conexionBD conexion = new conexionBD();
         public frmPrincipal()
         {
             InitializeComponent();
@@ -26,6 +27,20 @@ namespace pryDiazActividades
         {
             frmAgregar frmAgregar = new frmAgregar();
             frmAgregar.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvActividades.Rows.Count > 0)
+                {
+                    dgvActividades.Rows.RemoveAt(dgvActividades.SelectedRows[0].Index);
+                }
+            }
+            catch 
+            {
+            }
         }
     }
 }
